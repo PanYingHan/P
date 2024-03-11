@@ -9,4 +9,5 @@
 
 ## 作業連結區  
 HW1程式碼(https://github.com/PanYingHan/PL/blob/main/HM1)
+HW1分析(https://github.com/PanYingHan/PL/blob/main/HM1.pdf)
 ## 專題連結區  
