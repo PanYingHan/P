@@ -1,0 +1,66 @@
+import pandas as pd
+# 從CSV文件讀取數據
+df = pd.read_csv('/Users/yinghanpan36gmail.com/Desktop/National tourist arrivals statistics.csv')
+# 輸出CSV文件
+print(df)
+
+# 按照旅遊人數（10萬）的大小對數據進行排序
+df_sorted = df.sort_values(by='旅遊人數（10萬）', ascending=False)
+# 添加排名列
+df_sorted['旅遊人數排名'] = range(1, len(df_sorted) + 1)
+# 輸出加入旅遊人數排名後的文件
+print(df_sorted)
+
+# 按照較前年增長率％的大小對數據進行排序
+df_sorted = df.sort_values(by='較前年增長率％', ascending=False)
+# 添加排名列
+df_sorted['增長率排名'] = range(1, len(df_sorted) + 1)
+# 輸出加入增長率排名後的文件
+print(df_sorted)
+
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+# 按照旅遊人數（10萬）的大小對數據進行排序
+df_sorted = df_sorted.sort_values(by='旅遊人數（10萬）', ascending=False)
+# 設置字體，使用支持中文的字體
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS']
+# 繪制長條圖
+plt.figure(figsize=(10, 6))
+plt.bar(df_sorted['國家'], df_sorted['旅遊人數（10萬）'], color='skyblue')
+plt.xlabel('國家')
+plt.ylabel('旅遊人數（10萬）')
+plt.title('各國家旅遊人數排名')
+plt.xticks(rotation=45)  # 將 x 軸標簽進行旋轉以避免重疊
+plt.tight_layout()  # 調整布局以確保所有元素可見
+# 將圖表保存為圖片文件
+plt.savefig('travel_stats_sorted.png')
+# 顯示圖表
+plt.show()
+# 將「國家」改為「較前年增長率％」，並將title改成「各國家旅遊人數較前年增長率％」排名，即可製作「較前年增長率％」的長條圖。
+
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+# 按照旅遊人數（10萬）的大小對數據進行排序
+df_sorted = df_sorted.sort_values(by='旅遊人數（10萬）', ascending=False)
+# 設置字體，使用支持中文的字體
+plt.rcParams['font.sans-serif'] = ['Arial Unicode MS']
+# 創建畫布
+plt.figure(figsize=(10, 6))
+# 繪製折線圖
+plt.plot(df_sorted['國家'], df_sorted['旅遊人數（10萬）'], marker='o', color='skyblue', label='旅遊人數（10萬）')
+plt.xlabel('國家')
+plt.ylabel('旅遊人數（10萬）')
+plt.title('各國家旅遊人數排名')
+plt.xticks(rotation=45)  # 將 x 軸標簽進行旋轉以避免重疊
+plt.grid(True)  # 添加網格線
+plt.legend()  # 添加圖例
+plt.tight_layout()  # 調整布局以確保所有元素可見
+# 將圖表保存為圖片文件
+plt.savefig('travel_stats_line.png')
+# 顯示圖表
+plt.show()
+# 將「國家」改為「較前年增長率％」，並將title改成「各國家旅遊人數較前年增長率％」排名，即可製作「較前年增長率％」的折線圖。
