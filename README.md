@@ -18,5 +18,5 @@
 [HW3.程式碼](https://github.com/ethanlin1126/PL/blob/main/HW3.ipynb)<br>
 [HW3.csv](https://github.com/ethanlin1126/PL/blob/main/ptt_basketball_titles.csv)<br>
 [HW3.json](https://github.com/ethanlin1126/PL/blob/main/CHAT.json)<br>
-[HW3.影片解說](https://youtu.be/B-I3FT2x-cQ)<br> 
+[HW3.影片解說](https://youtu.be/JVXopdHOlwc)<br> 
 ## 專題連結區  
